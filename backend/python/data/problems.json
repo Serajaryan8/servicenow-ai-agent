@@ -1,0 +1,12 @@
+[
+  {"id": 1, "number": "PRB001", "description": "Recurring network failures"},
+  {"id": 2, "number": "PRB002", "description": "Email queue delays"},
+  {"id": 3, "number": "PRB003", "description": "System slowness"},
+  {"id": 4, "number": "PRB004", "description": "Database connection timeout"},
+  {"id": 5, "number": "PRB005", "description": "Repeated user login issues"},
+  {"id": 6, "number": "PRB006", "description": "Frequent VPN disconnections"},
+  {"id": 7, "number": "PRB007", "description": "Backup failures"},
+  {"id": 8, "number": "PRB008", "description": "Configuration drift"},
+  {"id": 9, "number": "PRB009", "description": "Performance degradation"},
+  {"id": 10, "number": "PRB010", "description": "License mismatch"}
+]

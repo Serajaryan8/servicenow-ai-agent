@@ -1,0 +1,12 @@
+[
+  {"id": 1, "number": "REQ001", "description": "New laptop request"},
+  {"id": 2, "number": "REQ002", "description": "Email account creation"},
+  {"id": 3, "number": "REQ003", "description": "VPN access"},
+  {"id": 4, "number": "REQ004", "description": "Software installation"},
+  {"id": 5, "number": "REQ005", "description": "Hardware replacement"},
+  {"id": 6, "number": "REQ006", "description": "Password reset"},
+  {"id": 7, "number": "REQ007", "description": "Projector setup"},
+  {"id": 8, "number": "REQ008", "description": "SharePoint access"},
+  {"id": 9, "number": "REQ009", "description": "Mobile device support"},
+  {"id": 10, "number": "REQ010", "description": "Printer access"}
+]
