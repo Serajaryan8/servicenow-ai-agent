@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2025-12-27 12:00:00">
+<sp_widget action="INSERT_OR_UPDATE">
+<id>fundeavor_chat_widget</id>
+<title>FundEavor Chat Assistant</title>
+<description>Advanced chat widget for FundEavor with streaming responses</description>
+<category>Communication</category>
+<roles>public</roles>
+<thumbnail/>
+<preview_image/>
+<public>true</public>
+<mobile>true</mobile>
+<has_preview>false</has_preview>
+<offline_enabled>false</offline_enabled>
+<demo_data/>
+<css><![CDATA[
+/* Styles embedded in widget controller */
+]]></css>
+
+<server_script><![CDATA[
+api.controller = 'FundEavorChatCtrl';
+api.templateUrl = 'fundeavor_chat_widget.html';
+
+api.onInit = function() {
+    api.user_id = gs.getUserID();
+    api.user_name = gs.getUser().getName();
+};
+
+api.getRecentCampaigns = function() {
+    var gr = new GlideRecord('x_adsr_fundeavor_campaign');
+    gr.addQuery('status', 'Published');
+    gr.orderByDesc('sys_created_on');
+    gr.setLimit(3);
+    gr.query();
+    
+    var campaigns = [];
+    while (gr.next()) {
+        campaigns.push({
+            number: gr.getValue('number'),
+            title: gr.getValue('title'),
+            target: gr.getValue('target')
+        });
+    }
+    return campaigns;
+};
+]]></server_script>
+
+<client_script><![CDATA[
+// Injected via fundeavor_chat_widget.js
+]]></client_script>
+
+<html><![CDATA[
+<div class="fundeavor-chat-container" ng-app="fundeavor_chat_widget" ng-controller="FundEavorChatCtrl as $ctrl">
+    <!-- Chat widget will be rendered here -->
+    <fundEavor-chat-widget></fundEavor-chat-widget>
+</div>
+
+<!-- Include required scripts -->
+<script src="/scripts/fundeavor_agent_v2.js"></script>
+<script src="/scripts/fundeavor_chat_widget.js"></script>
+]]></html>
+
+<options/>
+<sys_name>fundeavor_chat_widget</sys_name>
+<sys_package display_value="Fundeavor" source="x_adsr_fundeavor">a94b790e1bc94a1032a9415bbc4bcb24</sys_package>
+</sp_widget>
+</unload>

@@ -1,0 +1,3 @@
+# No external dependencies required for the lightweight prototype.
+# This demo uses a pure-Python TF-IDF implementation, so no packages are needed.
+
